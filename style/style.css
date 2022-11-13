@@ -4,9 +4,153 @@
     box-sizing: border-box;
     text-decoration: none;
     border: 0;
+    list-style: none;
+}
+
+:root {
+    /* color palette */
+    --main-color: #042940;
+    --background-color: #005C53;
+    --font-color: #D6D58E;
+    --font-color-link: #DBF227;
 }
 
 html, body {
     font-size: 16px;
-    
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background: #005C53;
 }
+
+.header {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 27vh;
+    width: 100%;
+    background: var(--main-color) url(../img/background-header.png);
+    margin-bottom: 3vh;
+}
+
+.background-transparent {
+    background: #042940f0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.titulo-logo {
+    color: var(--font-color-link);
+    letter-spacing: 1.9px;
+    font-size: 1.9rem; 
+    text-align: center;  
+    text-transform: uppercase;
+}
+
+.area-de-navegacao {
+    display: flex;
+    gap: 40px;
+}
+
+.link-navegacao {
+    color: var(--font-color);
+    padding: 5px;
+    cursor: pointer;
+    transition: .2s;
+    text-transform: uppercase;
+}
+
+.link-navegacao:hover {
+    background: #DBF227;
+    color: #042940;
+}
+
+.area-calculadora {
+    background: #042940;
+    height: 67vh;
+    width: 90vw;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #DBF227;
+}
+
+.figura {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 3fr 2fr;
+}
+
+.h2-tipo-de-figura {
+    text-align: center;
+    color: #DBF227;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    align-self: center;
+}
+
+.entrada-de-dados {
+    align-self: center;
+}
+
+label {
+    text-transform: uppercase;
+    color: #D6D58E;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+input, select {
+    border: 2px solid transparent;
+    outline: 2px solid white;
+}
+
+/* area de seleção da figura */
+
+.figura-selecionada {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    height: 50px;
+    padding: 15px;
+    border-bottom: 2px solid #DBF227;
+}
+
+/* area de dados sobre a figura */
+
+.dados-necessarios {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 15px;
+    margin-top: 20px;
+    border-bottom: 2px solid #DBF227;
+}
+
+.input-dado::placeholder {
+    color: rgba(0, 0, 0, 0.59);
+    font-weight: bold;
+}
+
+.input-dado {
+    padding: 3px;
+}
+
+input:focus, select:focus {
+    border: 2px solid #005C53;
+    outline: 2px solid white;
+}
+
+/* area do resultado do calculo de area da figura */
+
+.container-resultado {
+    border: 1px solid #DBF227;
+    background: #005C53;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
