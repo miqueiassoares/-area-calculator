@@ -15,10 +15,17 @@
     --font-color-link: #DBF227;
 }
 
+::selection {
+    background: #DBF227;
+    color: #005C53;
+}
+
 html, body {
     font-size: 16px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     background: #005C53;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .header {
@@ -71,6 +78,7 @@ html, body {
     background: #042940;
     height: 67vh;
     width: 90vw;
+    max-width: 1000px;
     margin: auto;
     padding: 20px;
     border: 2px solid #DBF227;
@@ -94,6 +102,8 @@ html, body {
 
 .entrada-de-dados {
     align-self: center;
+    display: flex;
+    flex-direction: column;
 }
 
 label {
@@ -154,3 +164,21 @@ input:focus, select:focus {
     align-items: center;
 }
 
+.butao-submit {
+    border: 3px solid #DBF227;
+    background: #005C53;
+    padding: 10px;
+    color: #DBF227;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+    align-self: center;
+}
+
+.butao-submit:hover {
+    background: #DBF227;
+    color: #005C53;
+}

@@ -28,6 +28,7 @@
                 <div class="figura-selecionada">
                     <label for="selecao-figuras-planas">Selecione a figura</label>
                     <select name="figuras-planas" id="selecao-figuras-planas">
+                        <option value="nenhuma">- - - - - - -</option>
                         <option value="quadrado">Quadrado</option>
                         <option value="triangulo">Triângulo</option>
                         <option value="retangulo">Retângulo</option>
@@ -39,11 +40,11 @@
                     <label for="lado-quadrado" class="label-dados">Lado do quadrado</label>
                     <input type="number" name="lado" id="lado-quadrado" min="1" placeholder="EM METROS." class="input-dado">
                 </div>
-                <button type="submit">Calcular</button>
+                <button type="submit" class="butao-submit">Calcular</button>
             </form>
             <div class="container-resultado">
                 <h3 class="h3-resultado">Resultado</h3>
-                <p class="resultado">Área total: <span id="">200m²</span></p>
+                <p class="resultado">Área total: <span id="area"></span></p>
             </div>
         </div>
 
