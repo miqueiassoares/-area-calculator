@@ -156,13 +156,6 @@ input:focus, select:focus {
 
 /* area do resultado do calculo de area da figura */
 
-.container-resultado {
-    border: 1px solid #DBF227;
-    background: #005C53;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .butao-submit {
     border: 3px solid #DBF227;
@@ -181,4 +174,28 @@ input:focus, select:focus {
 .butao-submit:hover {
     background: #DBF227;
     color: #005C53;
+}
+
+.container-resultado {
+    border: 1px solid #DBF227;
+    background: #005C53;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.h3-resultado {
+    color: #042940;
+    background: #DBF227;
+    padding: .5rem;
+    font-size: 2rem;
+}
+
+.resultado {
+    background: #042940;
+    padding: .5rem;
+    color: #D6D58E;
+    letter-spacing: .2rem;
+    font-size: 1.4rem;
 }
