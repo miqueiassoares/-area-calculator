@@ -136,7 +136,7 @@ input, select {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     padding: 15px;
-    margin-top: 20px;
+    margin: 10px 0px;
     border-bottom: 2px solid #DBF227;
 }
 
@@ -167,8 +167,10 @@ input:focus, select:focus {
     font-size: 1.2rem;
     margin-top: 20px;
     width: 100%;
-    max-width: 500px;
+    max-width: 700px;
     align-self: center;
+    cursor: pointer;
+    transition: background .2s;
 }
 
 .butao-submit:hover {
@@ -183,6 +185,9 @@ input:focus, select:focus {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    max-width: 700px;
+    width: 100%;
+    margin: auto;
 }
 
 .h3-resultado {
@@ -190,6 +195,7 @@ input:focus, select:focus {
     background: #DBF227;
     padding: .5rem;
     font-size: 2rem;
+    margin: 5px 0px;
 }
 
 .resultado {
@@ -198,4 +204,12 @@ input:focus, select:focus {
     color: #D6D58E;
     letter-spacing: .2rem;
     font-size: 1.4rem;
+    margin: 5px 0px;
+}
+
+
+@media (max-width: 700px) {
+    .titulo-logo {
+        font-size: 1.3rem;
+    }
 }

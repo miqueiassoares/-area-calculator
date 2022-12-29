@@ -22,7 +22,31 @@
         </div>
     </header>
     <section id="conteudo" class="area-calculadora">
-        
+        <div id="figuras-planas" class="figura">
+            <h2 class="h2-tipo-de-figura">Figuras planas</h2>
+            <form class="entrada-de-dados">
+                <div class="figura-selecionada">
+                    <label for="selecao-figuras-planas">Selecione a figura</label>
+                    <select name="figuras-planas" id="selecao-figuras-planas">
+                        <option value="nenhuma">- - - - - - -</option>
+                        <option value="quadrado">Quadrado</option>
+                        <option value="triangulo">Triângulo</option>
+                        <option value="retangulo">Retângulo</option>
+                        <option value="hexagono">Hexágono</option>
+                        <option value="circulo">Círculo</option>
+                    </select>
+                </div>
+                <div class="dados-necessarios">
+                    <label for="lado-quadrado" class="label-dados">Lado do quadrado</label>
+                    <input type="number" name="lado" id="lado-quadrado" min="1" placeholder="EM METROS." class="input-dado">
+                </div>
+                <button type="submit" class="butao-submit">Calcular</button>
+            </form>
+            <div class="container-resultado">
+                <h3 class="h3-resultado">Resultado</h3>
+                <p class="resultado">Área total: <span id="area"></span></p>
+            </div>
+        </div>
     </section>
 </body>
 </html>
