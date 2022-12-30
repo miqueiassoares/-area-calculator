@@ -48,44 +48,47 @@
                     <div class="quadrado">
                         <div class="container-template">
                             <label for="lado-quadrado" class="label-dados">Lado do quadrado</label>
-                            <input type="text" name="lado" id="lado-quadrado" placeholder="EM METROS." class="input-dado" autocomplete="off">
+                            <input type="number" name="lado" id="lado-quadrado" placeholder="EM METROS." class="input-dado" autocomplete="off">
                         </div>
                     </div>
 
                     <div class="triangulo">
                         <div class="container-template">
                             <label for="lado-triangulo" class="label-dados">Lado do triangulo</label>
-                            <input type="number" name="lado" id="lado-triangulo" placeholder="EM METROS." class="input-dado">
+                            <input type="number" name="lado" id="lado-triangulo" placeholder="EM METROS." class="input-dado" autocomplete="off">
                         </div>
                     </div>
 
                     <div class="retangulo">
                         <div class="container-template">
                             <label for="lado-retangulo-m" class="label-dados">Lado maior</label>
-                            <input type="number" name="lado" id="lado-retangulo-m" placeholder="EM METROS." class="input-dado">
+                            <input type="number" name="lado" id="lado-retangulo-m" placeholder="EM METROS." class="input-dado" autocomplete="off">
                             <label for="lado-retangulo-n" class="label-dados">Lado menor</label>
-                            <input type="number" name="lado" id="lado-retangulo-n" placeholder="EM METROS." class="input-dado">
+                            <input type="number" name="lado" id="lado-retangulo-n" placeholder="EM METROS." class="input-dado" autocomplete="off">
                         </div>
                     </div>
 
                     <div class="hexagono">
                         <div class="container-template">
                             <label for="lado-hexagono" class="label-dados">Lado do Hexágono</label>
-                            <input type="number" name="lado" id="lado-hexagono" placeholder="EM METROS." class="input-dado">
+                            <input type="number" name="lado" id="lado-hexagono" placeholder="EM METROS." class="input-dado" autocomplete="off">
                         </div>
                     </div>
 
                     <div class="circulo">
                         <div class="container-template">
                             <label for="raio-circulo" class="label-dados">Raio do círculo</label>
-                            <input type="number" name="lado" id="raio-circulo" placeholder="EM METROS." class="input-dado">
+                            <input type="number" name="lado" id="raio-circulo" placeholder="EM METROS." class="input-dado" autocomplete="off">
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="butao-submit">Calcular</button>
+                <div class="buttons">
+                    <button type="submit" class="butao-submit">Calcular</button>
+                    <button type="reset" class="butao-reset">Limpar</button>
+                </div>
             </form>
             <div class="container-resultado">
-                <h3 class="h3-resultado">Resultado</h3>
+                <h3 class="h3-resultado">Resultado:</h3>
                 <p class="resultado"><span id="figura"></span> <span class="dimensoes"></span> : <span id="area"></span></p>
             </div>
         </div>

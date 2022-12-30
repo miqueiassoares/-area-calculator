@@ -4,47 +4,55 @@ const nav = document.querySelector(".area-de-navegacao");
 const navBtnPlanas = document.querySelector(".planas");
 const navBtnNaoPlanas = document.querySelector(".nao-planas");
 const buttonCalcular = document.querySelector(".butao-submit");
+const buttonReset = document.querySelector(".butao-reset");
 const figura = document.querySelector("#selecao-figuras-planas");
+const area = document.querySelector("#area");
+const figuraArea = document.querySelector("#figura");
+const dimensoes = document.querySelector(".dimensoes");
+const nenhuma = document.querySelector(".nenhuma");
 const areas = {
     "quadrado": (lado) => lado**2,
     "triangulo": (lado) => (lado**2)/2,
     "retangulo": (ladoM, ladoN) => ladoM*ladoN,
     "hexagono": (lado) => ((((lado**2))*Math.sqrt(3))/2)*3,
-    "circulo": (raio) => {
-        if (raio) {
-            return 3.14159265*raio**2;
-        } else {
-            alert("preencha todos os dados");
-        }
-    }
+    "circulo": (raio) => 3.14159265*raio**2
 }
-
 let lista = ["nenhuma"];
 let index = 1;
 
-figura.addEventListener("change", function() {
-    lista[index++] = this.value;
+buttonReset.addEventListener("click", () => {
+    figura.value = "nenhuma";
+    figuraArea.textContent = "";
+    dimensoes.textContent = "";
+    area.textContent = "";
+    console.log(lista[1]);
+    if (lista[1] !== "nenhuma" && lista[1] !== undefined) {
+        document.querySelector("."+lista[1]).style.display = "none";
+    }
+    nenhuma.style.display = "block";
+    lista = ["nenhuma"];
+    index = 1;
+});
+
+function mudarHistorico() {
+    lista[index++] = figura.value;
     if (lista.length>2) {
         lista.shift();
         index--;
     }
-    document.querySelector("."+lista[1]).style.display = "block";
     document.querySelector("."+lista[0]).style.display = "none";
-});
+    document.querySelector("."+lista[1]).style.display = "block";
+    console.log(lista);
+}
+
+figura.addEventListener("change", mudarHistorico);
 
 function verificarDados() {
     if (figura.value !== "nenhuma") {
-        const area = document.querySelector("#area");
-        area.style.display = "inline";
-
-        const figuraArea = document.querySelector("#figura");
-
-        const dimensoes = document.querySelector(".dimensoes");
-
         switch (figura.value) {
-            case "quadrado":
-                let ladoQuadrado = Number(document.querySelector("#lado-quadrado").value);        
-                if (!(isNaN(ladoQuadrado))) {
+            case "quadrado": 
+            let ladoQuadrado = Number(document.querySelector("#lado-quadrado").value);       
+                if (!(isNaN(ladoQuadrado)) && ladoQuadrado !== 0) {
                     figuraArea.textContent = "Quadrado";
                     area.textContent = areas.quadrado(ladoQuadrado).toFixed(2)+" m²";
                     dimensoes.textContent = ladoQuadrado+"x"+ladoQuadrado;
@@ -52,10 +60,9 @@ function verificarDados() {
                     alert("Por favor, digite uma medida válida para que a área seja calculada.");
                 }
                 break;
-
             case "triangulo":
                 let ladoTriangulo = Number(document.querySelector("#lado-triangulo").value);
-                if (!(isNaN(ladoTriangulo))) {
+                if (!(isNaN(ladoTriangulo)) && ladoTriangulo !== 0) {
                     figuraArea.textContent = "Triângulo";
                     area.textContent = areas.triangulo(ladoTriangulo).toFixed(2)+" m²";
                     dimensoes.textContent = ladoTriangulo+"x"+ladoTriangulo+"x"+ladoTriangulo;
@@ -63,11 +70,10 @@ function verificarDados() {
                     alert("Por favor, digite uma medida válida para que a área seja calculada.");
                 }
                 break;
-            
             case "retangulo":
                 let ladoM = Number(document.querySelector("#lado-retangulo-m").value);
                 let ladoN = Number(document.querySelector("#lado-retangulo-n").value);
-                if (!(isNaN(ladoM)) && !(isNaN(ladoN))) {
+                if (!(isNaN(ladoM)) && !(isNaN(ladoN)) && ladoM !== 0 && ladoN !== 0) {
                     figuraArea.textContent = "Retângulo";
                     area.textContent = areas.retangulo(ladoM, ladoN).toFixed(2)+" m²";
                     dimensoes.textContent = ladoM+"x"+ladoN;
@@ -75,10 +81,9 @@ function verificarDados() {
                     alert("Preencha os dados corretamente para calcular a área do retângulo.");
                 }
                 break;
-            
             case "hexagono":
                 let ladoHexagono = Number(document.querySelector("#lado-hexagono").value);
-                if (!(isNaN(ladoHexagono))) {
+                if (!(isNaN(ladoHexagono))&& ladoHexagono !== 0) {
                     figuraArea.textContent = "Hexágono";
                     area.textContent = areas.hexagono(ladoHexagono).toFixed(2)+" m²";
                     dimensoes.textContent = "lado: "+ladoHexagono.toFixed(2) +" m";
@@ -88,7 +93,7 @@ function verificarDados() {
                 break;
             case "circulo":
                 let raioCirculo = Number(document.querySelector("#raio-circulo").value);
-                if (!(isNaN(raioCirculo))) {
+                if (!(isNaN(raioCirculo)) && raioCirculo !== 0) {
                     figuraArea.textContent = "Círculo";
                     area.textContent = areas.circulo(raioCirculo).toFixed(2)+" m²";
                     dimensoes.textContent = "raio: "+raioCirculo.toFixed(2)+" m"
@@ -105,6 +110,7 @@ function verificarDados() {
 }
 
 buttonCalcular.addEventListener("click", (event) => {
+
     event.preventDefault();
     verificarDados();
 });
@@ -129,4 +135,3 @@ function ativarArea(event) {
 nav.addEventListener("click", (event) => {
     ativarArea(event);
 });
-
