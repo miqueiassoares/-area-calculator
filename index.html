@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Áreas</title>
     <link rel="stylesheet" href="style/style.css">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/cubo.png" type="image/x-icon">
     <script src="js/index.js" defer></script>
 </head>
 <body>
@@ -16,13 +16,16 @@
                 <h1>Calculadora de Áreas</h1>
             </div>
             <nav class="area-de-navegacao">
-                <a onclick="openTipo('A', 'conteudo')" class="link-navegacao" id="link-planas">Figuras planas</a>
-                <a onclick="openTipo('B', 'conteudo')" class="link-navegacao" id="link-nao-planas">Figuras não planas</a>
+                <button class="navBtn planas">Figuras planas</button>
+                <button class="navBtn nao-planas">Figuras não planas</button>
             </nav>
         </div>
     </header>
-    <section id="conteudo" class="area-calculadora">
-        <div id="figuras-planas" class="figura">
+    <section id="conteudo" class="content">
+        <div class="template-padrao">
+            <p>A calculadora selecionada aparecerá aqui</p>
+        </div>
+        <div class="figura figuras-planas">
             <h2 class="h2-tipo-de-figura">Figuras planas</h2>
             <form class="entrada-de-dados">
                 <div class="figura-selecionada">
@@ -37,15 +40,57 @@
                     </select>
                 </div>
                 <div class="dados-necessarios">
-                    <label for="lado-quadrado" class="label-dados">Lado do quadrado</label>
-                    <input type="number" name="lado" id="lado-quadrado" min="1" placeholder="EM METROS." class="input-dado">
+
+                    <div class="template-dados nenhuma">
+                        <span>Selecione uma figura acima</span>
+                    </div>
+
+                    <div class="quadrado">
+                        <div class="container-template">
+                            <label for="lado-quadrado" class="label-dados">Lado do quadrado</label>
+                            <input type="text" name="lado" id="lado-quadrado" placeholder="EM METROS." class="input-dado" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="triangulo">
+                        <div class="container-template">
+                            <label for="lado-triangulo" class="label-dados">Lado do triangulo</label>
+                            <input type="number" name="lado" id="lado-triangulo" placeholder="EM METROS." class="input-dado">
+                        </div>
+                    </div>
+
+                    <div class="retangulo">
+                        <div class="container-template">
+                            <label for="lado-retangulo-m" class="label-dados">Lado maior</label>
+                            <input type="number" name="lado" id="lado-retangulo-m" placeholder="EM METROS." class="input-dado">
+                            <label for="lado-retangulo-n" class="label-dados">Lado menor</label>
+                            <input type="number" name="lado" id="lado-retangulo-n" placeholder="EM METROS." class="input-dado">
+                        </div>
+                    </div>
+
+                    <div class="hexagono">
+                        <div class="container-template">
+                            <label for="lado-hexagono" class="label-dados">Lado do Hexágono</label>
+                            <input type="number" name="lado" id="lado-hexagono" placeholder="EM METROS." class="input-dado">
+                        </div>
+                    </div>
+
+                    <div class="circulo">
+                        <div class="container-template">
+                            <label for="raio-circulo" class="label-dados">Raio do círculo</label>
+                            <input type="number" name="lado" id="raio-circulo" placeholder="EM METROS." class="input-dado">
+                        </div>
+                    </div>
                 </div>
                 <button type="submit" class="butao-submit">Calcular</button>
             </form>
             <div class="container-resultado">
                 <h3 class="h3-resultado">Resultado</h3>
-                <p class="resultado">Área total: <span id="area"></span></p>
+                <p class="resultado"><span id="figura"></span> <span class="dimensoes"></span> : <span id="area"></span></p>
             </div>
+        </div>
+        <div class="figuras-nao-planas">
+            <p>Calculadora em desenvolvimento...</p>
         </div>
     </section>
 </body>
