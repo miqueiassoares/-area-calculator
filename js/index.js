@@ -25,7 +25,6 @@ buttonReset.addEventListener("click", () => {
     figuraArea.textContent = "";
     dimensoes.textContent = "";
     area.textContent = "";
-    console.log(lista[1]);
     if (lista[1] !== "nenhuma" && lista[1] !== undefined) {
         document.querySelector("."+lista[1]).style.display = "none";
     }
@@ -42,7 +41,6 @@ function mudarHistorico() {
     }
     document.querySelector("."+lista[0]).style.display = "none";
     document.querySelector("."+lista[1]).style.display = "block";
-    console.log(lista);
 }
 
 figura.addEventListener("change", mudarHistorico);

@@ -273,12 +273,14 @@ input:focus, select:focus {
 }
 
 .quadrado, .triangulo, .retangulo, .hexagono, .circulo {
+    width: 100%;
     display: none;
 }
 
 .container-template {
     display: flex;
     justify-content: space-around;
+    width: 100%;
 }
 
 .retangulo {
@@ -328,10 +330,6 @@ input:focus, select:focus {
     }
     .figura-selecionada select {
         font-size: .8rem;
-    }
-    .dados-necessarios {
-        display: flex;
-        flex-wrap: warap;
     }
     .dados-necessarios label {
         font-size: 1rem;
